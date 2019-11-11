@@ -1,23 +1,38 @@
-const endDate = new Date("Dec 25, 2019 0:0:0").getTime();
+function calculateChristmasCountdown() {
+  const now = new Date();
+  const currentMonth = (now.getMonth() + 1);
+  const currentDay = now.getDate();
 
-const timer = setInterval(function () {
-
-  const now = new Date().getTime();
-  const timeLeft = endDate - now;
-
-  if (timeLeft >= 0) {
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-    document.querySelector("#timer-days").innerHTML = `${days}<span class="label">Day(s)</span>`;
-    document.querySelector("#timer-hours").innerHTML = `${hours}<span class="label">Hour(s)</span>`;
-    document.querySelector("#timer-mins").innerHTML = `${mins}<span class="label">Minute(s)</span>`;
-    document.querySelector("#timer-secs").innerHTML = `${secs}<span class="label">Second(s)</span>`;
-  
-  } else {
-    document.querySelector('#timer').innerHTML = "The countdown is over";
+  // Figure out the year that the next Christmas will occur on
+  const nextChristmasYear = now.getFullYear();
+  if (currentMonth === 12 && currentDay > 25) {
+    nextChristmasYear += 1;
   }
-  
-}, 1000);
+
+  const nextChristmasDate = `Dec 25, ${nextChristmasYear} 0:0:0`;
+  const christmasDate = new Date(nextChristmasDate);
+
+  let timeLeft = christmasDate.getTime() - now.getTime();
+
+  let days = 0;
+  let hours = 0;
+  let mins = 0;
+  let secs = 0;
+
+  //Don't calculate the time left if it is Christmas day
+  if (currentMonth !== 12 || (currentMonth === 12 && currentDay !== 25)) {
+    days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    mins = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    secs = Math.floor((timeLeft % (1000 * 60)) / 1000);
+  }
+
+  document.getElementById('days').innerHTML = `${days < 10 ? '0' : '' }${days} <span class='label'>Days</span>`;
+  document.getElementById('hours').innerHTML = `${hours < 10 ? '0' : '' }${hours} <span class='label'>Hours</span>`;
+  document.getElementById('mins').innerHTML = `${mins < 10 ? '0' : '' }${mins} <span class='label'>Minutes</span>`;
+  document.getElementById('secs').innerHTML = `${secs < 10 ? '0' : '' }${secs} <span class='label'>Seconds</span>`;
+
+  setInterval(calculateChristmasCountdown, 1000);
+}
+
+calculateChristmasCountdown();

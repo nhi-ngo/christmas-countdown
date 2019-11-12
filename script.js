@@ -27,10 +27,10 @@ function calculateChristmasCountdown() {
     secs = Math.floor((timeLeft % (1000 * 60)) / 1000);
   }
 
-  document.getElementById('days').innerHTML = `${days < 10 ? '0' : '' }${days} <span class='label'>Days</span>`;
-  document.getElementById('hours').innerHTML = `${hours < 10 ? '0' : '' }${hours} <span class='label'>Hours</span>`;
-  document.getElementById('mins').innerHTML = `${mins < 10 ? '0' : '' }${mins} <span class='label'>Minutes</span>`;
-  document.getElementById('secs').innerHTML = `${secs < 10 ? '0' : '' }${secs} <span class='label'>Seconds</span>`;
+  document.getElementById('days').innerHTML = `${days < 10 ? '0' : '' }${days}`;
+  document.getElementById('hours').innerHTML = `${hours < 10 ? '0' : '' }${hours}`;
+  document.getElementById('mins').innerHTML = `${mins < 10 ? '0' : '' }${mins}`;
+  document.getElementById('secs').innerHTML = `${secs < 10 ? '0' : '' }${secs}`;
 
   setInterval(calculateChristmasCountdown, 1000);
 }

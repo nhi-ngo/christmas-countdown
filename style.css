@@ -36,7 +36,8 @@ h1 {
 .animated {
 	animation-name: pulse;
 	animation-duration: 1s;
-  animation-timing-function: linear
+  animation-timing-function: linear;
+  animation-fill-mode: both;
   animation-iteration-count: infinite;
 }
 

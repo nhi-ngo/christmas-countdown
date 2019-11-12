@@ -6,15 +6,23 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Christmas Countdown</title>
 		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Patua+One&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<div class="container">
-			<h1>Countdown until Christmas Day</h1>
+			<h1>Christmas Countdown</h1>
 			<div id="timer">
-				<div id="timer-days"></div>
-				<div id="timer-hours"></div>
-				<div id="timer-mins"></div>
-				<div id="timer-secs"></div>
+				<div id="days"></div>
+				<div id="hours"></div>
+				<div id="mins"></div>
+				<div id="secs" class="animated"></div>
+				<span class="label">Days</span>
+				<span class="label">Hours</span>
+				<span class="label">Mins</span>
+				<span class="label">Secs</span>
 			</div>
 		</div>
 		<script src="script.js"></script>

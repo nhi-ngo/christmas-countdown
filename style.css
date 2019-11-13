@@ -1,58 +1,100 @@
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	color: #fff;
-	margin: 0;
-	padding: 0;
-  font-family: 'Patua One', cursive;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: "Patua One", cursive;
 }
 
 .container {
   background: url(https://source.unsplash.com/SBdmQcW8qag/1920x1060);
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	padding-top: 5rem;
-	align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  align-items: center;
 }
 
 h1 {
-	font-size: 8vh;
-	letter-spacing: 0.2rem;
+  font-size: 4rem;
+  letter-spacing: 0.2rem;
 }
 
 #timer {
-	font-size: 7.5rem;
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: 130px 50px;
-	justify-items: center;
-	grid-column-gap: 40px;
+  font-size: 7.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 128px 50px;
+  justify-items: center;
+  grid-column-gap: 40px;
 }
 
 .animated {
-	animation-name: pulse;
-	animation-duration: 1s;
+  animation-name: pulse;
+  animation-duration: 1s;
   animation-timing-function: linear;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
 }
 
 @keyframes pulse {
-	100% {
-		transform: scaleX(1);
-	}
-	30%, 50%, 80%{
-		transform: scale3d(1.1,1.1,1.1);
-	}
-	0% {
+  100% {
     transform: scaleX(1);
-	}
+  }
+
+  30%,
+  50%,
+  80% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  0% {
+    transform: scaleX(1);
+  }
 }
+
 .label {
-	font-size: 2.5rem;
-	color: #fec54d;
+  font-size: 2.5rem;
+  color: #fec54d;
+}
+
+@media screen and (max-width: 690px) {
+  #timer {
+    font-size: 5.5rem;
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 518px) {
+  #timer {
+    font-size: 4rem;
+    grid-template-rows: 70px 50px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .label {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 453px) {
+  #timer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 70px 30px);
+    grid-column-gap: 70px;
+  }
+
+  #timer span:nth-of-type(-n+2){
+    grid-row: 2/3;
+  }
 }

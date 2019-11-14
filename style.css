@@ -10,16 +10,16 @@ body {
 }
 
 .container {
-  background: url(https://source.unsplash.com/SBdmQcW8qag/1920x1060);
+  background: url(https://source.unsplash.com/SBdmQcW8qag/1820x1580);
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding-top: 5rem;
   align-items: center;
 }
 
 h1 {
+  padding-top: 5rem;
   font-size: 4rem;
   letter-spacing: 0.2rem;
 }

@@ -1,3 +1,12 @@
+const body = document.body;
+const daysEl = document.getElementById('days');
+const hoursEl = document.getElementById('hours');
+const minsEl = document.getElementById('mins');
+const secsEl = document.getElementById('secs');
+
+setInterval(calculateChristmasCountdown, 1000);
+setInterval(createSnowFlake, 100);
+
 function calculateChristmasCountdown() {
   const now = new Date();
   const currentMonth = (now.getMonth() + 1);
@@ -12,7 +21,7 @@ function calculateChristmasCountdown() {
   const nextChristmasDate = `Dec 25, ${nextChristmasYear} 0:0:0`;
   const christmasDate = new Date(nextChristmasDate);
 
-  let timeLeft = christmasDate.getTime() - now.getTime();
+  const timeLeft = christmasDate - now;
 
   let days = 0;
   let hours = 0;
@@ -27,12 +36,23 @@ function calculateChristmasCountdown() {
     secs = Math.floor((timeLeft % (1000 * 60)) / 1000);
   }
 
-  document.getElementById('days').innerHTML = `${days < 10 ? '0' : '' }${days}`;
-  document.getElementById('hours').innerHTML = `${hours < 10 ? '0' : '' }${hours}`;
-  document.getElementById('mins').innerHTML = `${mins < 10 ? '0' : '' }${mins}`;
-  document.getElementById('secs').innerHTML = `${secs < 10 ? '0' : '' }${secs}`;
-
-  setInterval(calculateChristmasCountdown, 1000);
+  daysEl.innerHTML = days < 10 ? '0' + days : days;
+  hoursEl.innerHTML = hours < 10 ? '0' + hours : hours;;
+  minsEl.innerHTML = mins < 10 ? '0' + mins : mins;;
+  secsEl.innerHTML = secs < 10 ? '0' + secs : secs;
 }
 
-calculateChristmasCountdown();
+function createSnowFlake() {
+  const snow_flake = document.createElement('i');
+  snow_flake.classList.add('far');
+  snow_flake.classList.add('fa-snowflake');
+  snow_flake.style.left = Math.random() * window.innerWidth + 'px';
+  snow_flake.style.animationDuration = Math.random() * 3 + 2 + 's';
+  snow_flake.style.opacity = Math.random();
+
+  body.appendChild(snow_flake);
+
+  setTimeout(() => {
+    snow_flake.remove();
+  }, 5000);
+}

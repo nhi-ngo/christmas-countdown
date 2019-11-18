@@ -6,24 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Christmas Countdown</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Patua+One&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Christmas Countdown</h1>
-      <div id="timer">
-        <div id="days"></div>
-        <div id="hours"></div>
-        <div id="mins"></div>
-        <div id="secs" class="animated"></div>
-        <span class="label">Days</span>
-        <span class="label">Hours</span>
-        <span class="label">Mins</span>
-        <span class="label">Secs</span>
+    <div id="wrapper">
+      <div class="countdown-container">
+        <h1>Christmas Countdown</h1>
+        <div id="timer">
+          <div id="days"></div>
+          <div id="hours"></div>
+          <div id="mins"></div>
+          <div id="secs" class="animated"></div>
+          <span class="label">Days</span>
+          <span class="label">Hours</span>
+          <span class="label">Mins</span>
+          <span class="label">Secs</span>
+        </div>
+      </div>
+
+      <button class="start-quiz-btn">Start Christmas Quiz</button>
+
+      <div id="quiz-container">
+        <h1>Christmas Quiz</h1>
+
+        <div class="questionCount">
+          Question <span id="questionNumber">1</span>/<span id="questionTotal"
+            >5</span
+          >
+        </div>
+
+        <div class="question">
+          <p>What was Joseph's job?</p>
+        </div>
+
+        <div class="answer">
+          <div id="a0" class="answer-box">0</div>
+          <div id="a1" class="answer-box">1</div>
+          <div id="a2" class="answer-box">2</div>
+          <div id="a3" class="answer-box">3</div>
+        </div>
+
+        <div class="message-box">
+          <div class="message">GOOD LUCK!</div>
+          <div class="message-restart hidden">
+            <button class="restart-btn">PLAY AGAIN</button>
+          </div>
+        </div>
+
+        <div class="score">
+          <p id="green">Correct answers: <span id="correctCount">0</span></p>
+          <p id="red">Wrong answers: <span id="wrongCount">0</span></p>
+        </div>
       </div>
     </div>
 

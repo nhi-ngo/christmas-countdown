@@ -80,19 +80,26 @@ const quest = [
     [0]
   ],
   [
-    ["What is the first recorded year of Christmas being celebrated?"],
-    ["336", "125", "1", "1538"],
-    [0]
-  ],
-  [
-    ["How many red nosed raindeers pull Santa's sleigh?"],
+    ["How many red nosed reindeers pull Santa's sleigh?"],
     ["6", "8", "1", "2"],
     [2]
   ],
   [
-    ["What is Santa's head elf called?"],
-    ["Bernard", "Jack", "Lim", "Simon"],
+    ["What country did Christmas Trees originate from?"],
+    ["Switzerland", "Mexico", "Germany", "Portugal"],
     [2]
+  ],
+  [
+    [
+      "How does Santa Claus go back up the Chimney to continue his journey of delivering gifts?"
+    ],
+    [
+      "He asks reindeers for help",
+      "He levitates",
+      "He calls fire-fighters",
+      "He jumps up through the chimney"
+    ],
+    [3]
   ],
   [
     ["In the TV series Simpsons, what species is Santas little helper?"],
@@ -105,7 +112,7 @@ questionTotal.textContent = quest.length;
 
 function displayQuiz() {
   const displayQuiz = document.querySelector("#quiz-container");
-  displayQuiz.style.visibility = "visible";
+  displayQuiz.classList.toggle("reveal-visible");
 }
 
 restartBtn.addEventListener("click", function() {
@@ -136,7 +143,7 @@ function processGame() {
     document.querySelector("#a" + i).addEventListener("click", function() {
       selected = i;
 
-      if (selected === quest[currentQuestion][2]) {
+      if (selected == quest[currentQuestion][2]) {
         correct++;
         correctCount.textContent = correct;
         message.textContent = "GOOD JOB!";
@@ -148,7 +155,6 @@ function processGame() {
       nextQuestion();
     });
   }
-  return;
 }
 
 function nextQuestion() {

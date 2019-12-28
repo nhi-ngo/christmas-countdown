@@ -14,7 +14,7 @@ function calculateChristmasCountdown() {
   const currentDay = now.getDate();
 
   // Figure out the year that the next Christmas will occur on
-  const nextChristmasYear = now.getFullYear();
+  let nextChristmasYear = now.getFullYear();
   if (currentMonth === 12 && currentDay > 25) {
     nextChristmasYear += 1;
   }

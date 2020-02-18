@@ -113,6 +113,7 @@ questionTotal.textContent = quest.length;
 function displayQuiz() {
   const displayQuiz = document.querySelector("#quiz-container");
   displayQuiz.classList.toggle("reveal-visible");
+  startGame();
 }
 
 restartBtn.addEventListener("click", function() {

@@ -11,8 +11,8 @@ This countdown timer automatically begins to count down to next year’s Christm
 ## User Stories
 
 - The site behaves responsively across all screen sizes. 
-- Users can click on Christmas Quiz button to start the quiz. 
-- Users can also retake the quiz by clicking PLAY AGAIN button.
+- The Christmas Quiz button let users toggle between hiding and showing the quiz. 
+- The Play Again button let users retake the quiz.
 
 ## Tech Used
 

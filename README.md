@@ -17,3 +17,6 @@ This countdown timer automatically begins to count down to next year’s Christm
 ## Tech Used
 
 - HTML, CSS, JavaScript
+
+## Notes
+https://www.notion.so/nhiyngo/Building-Christmas-Countdown-Timer-15394658dc3b46acb927563c2823949e

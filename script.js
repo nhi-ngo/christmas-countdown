@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 // Countdown section
 const { body } = document;
 const daysEl = document.getElementById('days');
